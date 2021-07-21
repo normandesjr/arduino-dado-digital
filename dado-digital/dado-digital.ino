@@ -45,17 +45,17 @@ void rollDice() {
   int choosedNumber = random(6);
   
   for (int i = 0; i < 6; i++) {
-    apaga();
+    erase();
     int randomNumber = random(6);
-    numero(randomNumber);
+    printNumber(randomNumber);
     delay(100);
   }
   
-  apaga();
-  numero(choosedNumber);
+  erase();
+  printNumber(choosedNumber);
 }
 
-void apaga() {
+void erase() {
   digitalWrite(a, LOW);
   digitalWrite(b, LOW);
   digitalWrite(c, LOW);
@@ -65,7 +65,7 @@ void apaga() {
   digitalWrite(g, LOW);
 }
 
-void numero(int n) {
+void printNumber(int n) {
   for (int i = 0; i < 6; i++) {
     digitalWrite(num[n][i], HIGH);
   }
